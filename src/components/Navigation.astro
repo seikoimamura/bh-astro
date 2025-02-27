@@ -1,0 +1,11 @@
+---
+import { mainMenus } from '../assets/data/biblehelp.ts';
+---
+<ul class="menu menu-horizontal px-1">
+  {mainMenus.map((item, index) => {
+  return (
+    <li key="{index}"><a href={item.href}>{item.name}</a></li>
+  )
+  })}
+</ul>
+

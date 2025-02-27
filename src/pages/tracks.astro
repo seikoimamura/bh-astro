@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TrackImage from "../components/TrackImage.astro";
+
+import { pages, chickTracks } from '../assets/data/biblehelp.ts';
+const pageTitle = pages['tracks']['title'];
+---
+<Layout pageTitle={pageTitle}>
+  <div className={"grid lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-2 gap-4 mb-8"}>
+    {chickTracks.items.map((item, index) => {
+    return (
+      <div key={index} className={"grayscale hover:grayscale-0"}>
+        <TrackImage
+          imagePath={`/src/assets/images/${item.img}`}
+          altText={item.title}
+          name={item.title}
+          href={item.href}
+        />
+      </div>
+    )
+    })}
+  </div>
+</Layout>

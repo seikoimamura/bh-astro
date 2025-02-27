@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import chackImage from '../assets/images/346.jpg';
+import joeImage from '../assets/images/842.jpg';
+import { pages, chickSite } from '../assets/data/biblehelp.ts';
+
+const pageTitle = pages['about']['tile'];
+
+---
+<Layout pageTitle={pageTitle}>
+  <div class="flex max-full flex-col lg:flex-row mb-8">
+    <div class="card max-w-lg grid place-items-center">
+        <h2 class="card-title">ジャック・チックとは誰でしょう？</h2>
+        <Image src={ chackImage } alt="Jack Chick" width={300} height={150} class="m-8" />
+        <p>
+          ジャック・チックは1924年4月13日にカリフォルニア州のボイル・ハイツで生まれました。
+          ジャックの両親はトーマスとポーリーン、そして妹はドリスです。
+          ジャックは不自由のない子供時代を過ごしましたが、家族で特に教会通ったりしたことはなく、キリスト教とは無縁の生活を過ごしました。
+        </p>
+        <p class="pt-4">小さいころからジャックは絵を描くことに興味を示し、1年生の頃から飛行機の戦闘シーンを書いていたほどです。</p>
+        <p class="pt-4">
+          ジャックは第二次世界大戦の最中に陸軍に召集され、終戦後の1948年にパサデナ劇場で出会った敬虔なクリスチャンであるカナダ移民のロラ・プリドルと結婚し、ハネムーンの夜にクリスチャンとなりました。
+        </p>
+        <p class="pt-4">
+          彼は、1960年に「なぜ信仰復興がないのか」、1962年に「悪魔の悪夢」を自費出版、そして1970年にチック出版社を設立しました。
+          チック出版社のコミックはオカルトや聖書の中の預言書などのキリスト教を土台にしています。
+          また、チックのコミック小冊子の中で一番人気のある「これがあなたの生涯でした！」は100言語以上に翻訳されました。
+          チックのコミック小冊子は、現在までに3千5百万ものが世界60か国の福音宣教に使われています。
+        </p>
+        <p class="pt-4">ジャックは2016年10月23日に自宅で安らかに主に召されました。</p>
+        <p class="pt-4">
+          <a href={chickSite} target="_blank">
+            チックのコミック小冊子は著作権で守られているので、無断転載は禁じられております。
+            ご使用を希望する方はチック出版社からの許可が必要です。
+          </a>
+        </p>
+    </div>
+
+    <div class="divider lg:divider-horizontal"></div>
+
+    <div class="card max-w-lg place-items-center">
+      <h2 class="card-title">Bible Helpとは</h2>
+      <Image src={ joeImage } alt="" width={300} class="m-8" />
+      <p>
+        当サイトにお立ち寄り頂きありがとうございます。初めまして。当サイトにお越しいただきありがとうございます。私たちは当サイトに立ち寄られた方は神様のお導きによるものと信じています。あなたのためにお祈りしたり、また、不明点があればなんなりとご返答差し上げたいので、どうぞご気軽にEメールや手紙でご連絡ください。私たちはアメリカ在住ですので、通常のお祈りではなく急ぎの事態がありましたら、日本のバプテスト教会に連絡を取ってみてください。どうぞチックトラックのウェブアドレスをクリスチャン、また、クリスチャンでない方にも送って差し上げてください。チックトラックは著作権で守られているので、無断転載は禁じられております。ご使用を希望する方はチック出版社からの許可が必要です。
+      </p>
+    </div>
+  </div>
+
+</Layout>
+

@@ -1,0 +1,19 @@
+---
+import { getImageSrc } from '../utils/myUtils';
+import { Image } from 'astro:assets';
+
+interface Props {
+  imagePath: string;
+  altText: string;
+  name: string;
+  href: string;
+}
+
+const { imagePath, altText, name, href } = Astro.props;
+
+---
+<div class="card">
+    <a href={href} target="_blank">
+      <Image src={getImageSrc(imagePath)} alt={altText} />
+    </a>
+</div>

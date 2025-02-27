@@ -1,0 +1,21 @@
+---
+import { getImageSrc, getDateString } from '../utils/myUtils';
+import Layout from './Layout.astro';
+import { Image } from 'astro:assets';
+const { blog } = Astro.props;
+---
+<Layout pageTitle={blog.title}>
+  <div class="p-4">
+    <p>{getDateString(blog.pubDate)}</p>
+    <p><em>{blog.description}</em></p>
+    <p>Written by: {blog.author}</p>
+    <Image src={getImageSrc(blog.image.url)} width="300" height="150" alt={blog.image.alt} />
+    <div class="flex p-8">
+      {blog.tags.map((tag: string) => (
+      <div class="badge badge-ghost m-1"><a href={`/tags/${tag}`}>{tag}</a></div>
+      ))}
+    </div>
+    <slot />
+  </div>
+</Layout>
+

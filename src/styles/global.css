@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+@plugin "daisyui" {
+  themes: lofi --default, dark --prefersdark, cupcake, light;
+  /*root: ":root";*/
+  /*include: ;*/
+  /*exclude: ;*/
+  /*prefix: d-;*/
+  logs: true;
+}

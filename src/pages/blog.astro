@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import BlogPost from "../components/BlogPost.astro";
+import { pages } from '../assets/data/biblehelp.ts';
+
+const pageTitle = pages['blog']['title'];
+const allPosts = await getCollection("blog");
+
+//console.log(allPosts[0].rendered['html']);
+//console.log(allPosts[0]);
+
+allPosts.sort((a, b) => b.data.pubDate - a.data.pubDate)
+---
+<Layout pageTitle={pageTitle}>
+  <div class="max-w-5xl grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-4">
+    { allPosts.map((post, index) => <BlogPost index={index} id={post.id} blog={post.data} html={post.rendered['html']} /> ) }
+  </div>
+</Layout>

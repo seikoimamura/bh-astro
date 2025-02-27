@@ -1,0 +1,22 @@
+---
+import Hamburger from './Hamburger.astro';
+import Navigation from './Navigation.astro';
+import ThemeIcon from './ThemeIcon.astro';
+import Logo from '../../public/favicon.svg';
+---
+<header>
+  <nav>
+    <div class="navbar bg-base-100 shadow-sm">
+      <div class="navbar-start">
+        <Hamburger />
+        <a class="btn btn-ghost text-xl"><Logo size={26} />Bible Help</a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <Navigation />
+      </div>
+      <div class="navbar-end">
+        <ThemeIcon />
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,16 +1,57 @@
 ---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import trackImage from '../assets/images/293.jpg';
+import messageImage from '../assets/images/735.jpg';
+import { pages } from '../assets/data/biblehelp.ts';
 
+const pageTitle = pages['home']['title'];
 ---
+<Layout pageTitle={pageTitle}>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <div class="hero bg-base-200 min-h-0">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <Image
+        src={trackImage}
+        alt=""
+        class="max-w-sm rounded-lg shadow-2xl" />
+      <div class="text-center">
+        <div class="max-w-md prose">
+          <h2>{pages['tracks']['title']}</h1>
+            <p class="py-6">
+              このサイトでは、ジャック・チックが描いたコミック小冊子を紹介しています。
+              ジャック・チックはイエスの福音を多くの方に伝えたいという思いから数々のコミックを描いています。
+            </p>
+            <a href="/tracks/">
+              <button class="btn btn-primary">{pages['tracks']['menu']}</button>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero bg-base-200 min-h-0">
+    <div class="hero-content flex-col lg:flex-row">
+      <Image
+        src={messageImage}
+        alt=""
+        class="max-w-sm rounded-lg shadow-2xl" />
+      <div class="text-center">
+        <div class="max-w-md prose">
+          <h2>{pages['blog']['title']}</h1>
+            <p class="py-6">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+              quasi. In deleniti eaque aut repudiandae et a id nisi.<br>
+              私たちは当サイトに立ち寄られた方は神様のお導きによるものと信じています。
+              お立ち寄り頂きありがとうございます。
+            </p>
+            <a href="/blog/">
+              <button class="btn btn-primary">{pages['blog']['menu']}</button>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</Layout>
+
