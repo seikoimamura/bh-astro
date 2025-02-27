@@ -7,7 +7,7 @@ import preact from '@astrojs/preact';
 // https://astro.build/config
 export default defineConfig({
   site: "https://seikoimamura.github.io",
-  base: "bh-astro",
+  base: "/bh-astro",
   output: 'static',
   integrations: [preact()],
   vite: {
