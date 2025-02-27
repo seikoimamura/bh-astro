@@ -1,5 +1,5 @@
 ---
-import { getImageSrc, getDateString, isNewPost } from '../utils/myUtils';
+import { getImageSrc, getDateString, isNewPost, addBase } from '../utils/myUtils';
 import { Image } from 'astro:assets';
 const { index, id, blog, html } = Astro.props;
 
@@ -10,16 +10,16 @@ const divClass = index == 0 ? recentPostAttr : postAttr;
 
 //console.log(blog);
 //console.log(blog.rendered['html']);
-console.log("html|"+html);
+//console.log("html|"+html);
 ---
 <div class={divClass}>
   <figure>
-    <a href={`/posts/${id}/`}>
+    <a href={addBase(`/posts/${id}/`)}>
       <Image src={getImageSrc(blog.image.url)} inferSize alt={blog.image.alt} />
     </a>
   </figure>
   <div class="card-body">
-    <a href={`/posts/${id}/`}>
+    <a href={addBase(`/posts/${id}/`)}>
       <h2 class="card-title">{blog.title}{isNew ? <div class="badge badge-secondary">New</div> : ""}</h2>
       <p>{getDateString(blog.pubDate)}</p>
       <p>{blog.description}</p>

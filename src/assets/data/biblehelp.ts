@@ -1,3 +1,5 @@
+import { addBase } from '../../utils/myUtils';
+
 export const pages = {
   home: {title:'Bible Help へようこそ！', menu: "ホーム"},
   about: {title: "このサイトについて", menu: "このサイトについて"},
@@ -7,11 +9,11 @@ export const pages = {
 };
 
 export const mainMenus = [
-  {name: pages['home']['menu'], href: "/"},
-  {name: pages['about']['menu'], href: "/about/"},
-  {name: pages['blog']['menu'], href: "/blog/"},
-  {name: pages['tags']['menu'], href: "/tags/"},
-  {name: pages['tracks']['menu'], href: "/tracks/"}
+  {name: pages['home']['menu'], href: addBase("/")},
+  {name: pages['about']['menu'], href: addBase("/about/")},
+  {name: pages['blog']['menu'], href: addBase("/blog/")},
+  {name: pages['tags']['menu'], href: addBase("/tags/")},
+  {name: pages['tracks']['menu'], href: addBase("/tracks/")}
 ];
 
 export const chickSite = "https://www.chick.com/information/contact-us";

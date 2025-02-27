@@ -1,3 +1,4 @@
+import { defineConfig } from 'astro/config';
 import type { ImageMetadata } from 'astro';
 
 export const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/*.{jpeg,jpg,png,gif}');
@@ -41,4 +42,9 @@ export function isNewPost(postDate, days) {
   const daysAgoDate = new Date();
   daysAgoDate.setDate(today.getDate() - days);
   return (postDate >  daysAgoDate);
+}
+
+export function addBase(url) {
+  return import.meta.env.BASE_URL + url;
+  //return url;
 }

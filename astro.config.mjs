@@ -8,6 +8,7 @@ import preact from '@astrojs/preact';
 export default defineConfig({
   site: "https://seikoimamura.github.io",
   base: "/bh-astro",
+  output: 'static',
   integrations: [preact()],
   vite: {
      plugins: [tailwindcss()],
